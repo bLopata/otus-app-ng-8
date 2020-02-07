@@ -1,0 +1,25 @@
+<div class="container text-center">
+  <h1>{{ title }}</h1>
+</div>
+<div class="container">
+<app-search-component></app-search-component>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>GPA</th>
+          <th>ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td (click)="navigateTo(student)" class="row-hover link">{{ student.first }}</td>
+          <td (click)="navigateTo(student)" class="row-hover link">{{ student.last }}</td>
+          <td class="row-hover">{{ computeGPA(student.studentClasses) }}</td>
+          <td class="row-hover">{{ student.student_id }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>

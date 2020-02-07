@@ -1,0 +1,7 @@
+<div id="search-component">
+    <h4><label for="search-box">Search Students</label></h4>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="&#61442; Start searching for a student by first name, last name, or both." class="form-control" />
+    <ul class="search-result">
+        <li *ngFor="let student of students$ | async"><a routerLink="/student/{{student.student_id}}" >{{student.first}}</a></li>
+    </ul>
+</div>
